@@ -1,0 +1,14 @@
+/* Only what Bulma has no class for. */
+.flash {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  font-size: 5rem;
+  color: var(--bulma-text-strong);
+  border: 2px solid transparent;
+}
+.flash.correct { border-color: var(--bulma-success); }
+.flash.wrong { border-color: var(--bulma-danger); }
+
+.option.button { font-size: 2.5rem; height: auto; }
+.cap { text-transform: capitalize; }
