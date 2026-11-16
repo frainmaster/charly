@@ -1,0 +1,6 @@
+{
+  // static-only Worker: serves Vite's build output, no server code
+  "name": "charly",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./dist" }
+}
