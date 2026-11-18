@@ -80,6 +80,10 @@
       autocapitalize="off"
       spellcheck="false"
     />
+    <!-- mousedown preventDefault keeps focus (and the mobile keyboard) on the input -->
+    <button class="button is-primary is-medium is-fullwidth mt-3" type="submit" onmousedown={(e) => e.preventDefault()}>
+      {result ? 'Next' : 'Submit'}
+    </button>
   </form>
 {:else}
   <div class="fixed-grid has-2-cols">
@@ -103,7 +107,7 @@
   {:else if result}
     <div class="notification is-danger is-light is-flex is-align-items-center is-justify-content-space-between">
       <span>Answer: <strong>{mode === 'type' ? card.answers.join(' / ') : card.char}</strong></span>
-      <button class="button is-danger" onclick={next}>Next</button>
+      {#if mode !== 'type'}<button class="button is-danger" onclick={next}>Next</button>{/if}
     </div>
   {/if}
 </div>
